@@ -2,7 +2,7 @@ export const generateMetadata = async ({ params }) => {
   const query = decodeURIComponent(params.name);
 
   return {
-    title: "Searching for " + query,
+    title: "Поиск " + query,
   };
 };
 

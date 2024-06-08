@@ -10,7 +10,7 @@ export default function AnimePage({ params }) {
     fetch(`https://api-consumet-org-gamma-sage.vercel.app/anime/gogoanime/info/${anime}`)
       .then((res) => res.json())
       .then((data) => setData(data));
-  }, []);
+  }, [anime]);
 
   if (!data) {
     return null;
@@ -37,7 +37,7 @@ export default function AnimePage({ params }) {
         </div>
       </div>
       <div id="episodes">
-        <h2>Episodes ({data.totalEpisodes})</h2>
+        <h2>Эпизоды ({data.totalEpisodes})</h2>
         <div className="episodelist-container">
           <div id="episodelist" className="scroll-x">
             {data.episodes.map((ep) => (

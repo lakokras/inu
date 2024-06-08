@@ -119,7 +119,7 @@ export default function AnimePage({ params }) {
         playerRef.current.destroy();
       }
     };
-  }, [params]);
+  }, [anime, params, watch]);
 
   return (
     <div id="main">
@@ -127,12 +127,12 @@ export default function AnimePage({ params }) {
 
       <text id="animetitle">
         {" "}
-        <Link href={`/anime/${animeData?.id}`}>{animeData?.title}</Link> </text> <br></br> <text id="episodetitle"> Episode{" "}
+        <Link href={`/anime/${animeData?.id}`}>{animeData?.title}</Link> </text> <br></br> <text id="episodetitle"> Эпизод{" "}
         {findEpisodeNumber(watch)}
       </text>
 
       <div id="episodes">
-        <h2>Episodes ({animeData?.totalEpisodes})</h2>
+        <h2>Эпизоды ({animeData?.totalEpisodes})</h2>
         <div className="episodelist-container">
           <div id="episodelist" className="scroll-x">
             {animeData?.episodes.map((ep) => (
